@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_18_172740) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_18_173650) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "creation_date"
@@ -32,6 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_172740) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "skill_type_id", null: false
+    t.index ["skill_type_id"], name: "index_skills_on_skill_type_id"
   end
 
   create_table "user_types", force: :cascade do |t|
@@ -47,6 +49,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_18_172740) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "skill_id", null: false
+    t.integer "project_id", null: false
+    t.integer "user_type_id", null: false
+    t.index ["project_id"], name: "index_users_on_project_id"
+    t.index ["skill_id"], name: "index_users_on_skill_id"
+    t.index ["user_type_id"], name: "index_users_on_user_type_id"
   end
 
+  add_foreign_key "skills", "skill_types"
+  add_foreign_key "users", "projects"
+  add_foreign_key "users", "skills"
+  add_foreign_key "users", "user_types"
 end
