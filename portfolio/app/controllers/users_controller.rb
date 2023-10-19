@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+
   def index
       render :index
+      @users = User.all
   end
 
   def new
