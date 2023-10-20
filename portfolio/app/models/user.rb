@@ -5,5 +5,5 @@ class User < ApplicationRecord
   has_many :skills
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
->>>>>>>>> Temporary merge branch 2
+
 end
