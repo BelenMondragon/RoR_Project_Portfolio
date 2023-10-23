@@ -1,0 +1,26 @@
+<h1>HI!</h1>
+
+<% if current_user%>
+    <p>Hello <%= current_user.email%>!</p>
+    <p>You are a [<%= current_user.role%>]</p>
+    <% if current_user.admin? %>
+    <br />
+
+        There are <%= User.count%> users in the system.
+    <% end %>
+    <p>
+        You have successfully aunthenticated whith your Devise acount.
+        You are now ready to interact with this Portfolio
+    </p>
+
+<% if user_signed_in? %>  	
+  <%= link_to "Sign Out", sign_out_path %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+
+<% else %>
+    <p> You ar not signet in.</p>
+    <%= link_to "Sign Up!", new_user_registration_path%>
+    <%= link_to "Login!", new_user_session_path%>
+<% end %>

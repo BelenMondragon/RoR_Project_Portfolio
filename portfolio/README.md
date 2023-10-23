@@ -46,5 +46,4 @@ rails generate migration AddUserTypeRefToUser user_type:references
 
  rails generate migration AddProjectRefToUser project:references
 
- rails generate migration AddSkillRefToUser skill:reference
-s
+ rails generate migration AddSkillRefToUser skill:references
