@@ -1,0 +1,55 @@
+-- database: c:\RoR_Project_Portfolio\portfolio\db\development.sqlite3
+-- Use the ▷ button in the top right corner to run the entire file.
+SELECT
+    *
+FROM
+    "projects"
+ORDER BY
+    "skill_type_id" ASC;
+
+INSERT INTO
+    projects (
+        name,
+        creation_date,
+        language,
+        description,
+        created_at,
+        updated_at,
+        skill_type_id
+    )
+VALUES
+    (
+        "Pokedex",
+        "10/5/23",
+        "React",
+        "utilizando api",
+        "10/10/23",
+        "10/10/23",
+        2
+    );
+
+INSERT INTO
+    skill_types (type, description, created_at, updated_at)
+VALUES
+    ("soft", "soft abilities", "10/10/23", "10/10/23");
+
+INSERT INTO
+    skill_types (type, description, created_at, updated_at)
+VALUES
+    (
+        "tecnical",
+        "tecnical abilities",
+        "10/10/23",
+        "10/10/23"
+    );
+
+INSERT INTO
+    skills (
+        name,
+        description,
+        created_at,
+        updated_at,
+        skill_type_id
+    )
+VALUES
+    ("test", "test", "10/10/23", "10/10/23", 2);

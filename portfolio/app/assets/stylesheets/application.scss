@@ -1,5 +1,5 @@
 @import "bootstrap";
-
+// ==============home====================
 body{
 background-color: cadetblue;
 }
@@ -7,6 +7,9 @@ background-color: cadetblue;
 #page{
     height: 100vh;
 }
+
+// ==============header====================
+
 
 #nav-bar{
     height: 100vh;
@@ -20,4 +23,17 @@ background-color: cadetblue;
 
 #nav-item{
 
+}
+
+// ==============login====================
+
+
+.row{
+    background-color: rgba(255, 255, 255, 0.562);
+}
+
+
+.card > .card-body > .btn > a {
+    
+    color: black;
 }

@@ -1,2 +1,30 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1>My projects</h1>
+
+<p>¡Bienvenido a mi portafolio de desarrollo web fullstack! 
+Aquí encontrarás una colección de los proyectos que he 
+creado a lo largo de mis estudios y mi carrera como 
+desarrollador web. Desde sitios web dinámicos y 
+aplicaciones interactivas hasta sistemas de gestión de 
+contenido y aplicaciones móviles, estos proyectos son un 
+testimonio de mi pasión por la programación y mi 
+compromiso con la excelencia en el desarrollo web.</p>
+
+<p>Explora esta galería para descubrir una variedad de 
+proyectos que demuestran mis habilidades en el diseño de 
+interfaces atractivas, la programación de funcionalidades 
+robustas y la implementación de soluciones técnicas 
+innovadoras. Cada proyecto tiene su propia historia y 
+desafíos únicos, lo que refleja mi crecimiento y evolución
+como desarrollador a lo largo del tiempo.</p>
+
+    <% @projects.each do |project|%>
+   
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> <%=project.name%> </h5>
+    <p class="card-text"><%=project.description%> </p>
+    <%=link_to project.id, project, :class => "btn btn-primary"%>
+  </div>
+</div>
+    <% end %>
